@@ -55,7 +55,7 @@ class Rental(models.Model):
     date = models.DateField(default=datetime.date.today)
     
     # Price field
-    price = models.DecimalField(default=0.0)
+    price = models.FloatField(default=0.0)
     
     # Method for calculating price.
     def calc_price(self) -> float:
