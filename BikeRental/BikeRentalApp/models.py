@@ -57,6 +57,10 @@ class Rental(models.Model):
     # Price field
     price = models.FloatField(default=0.0)
     
+    #str representation
+    def __str__(self) -> str:
+        return f"Bike: {self.bike.bike_type}_{self.bike.color} - Renter: {self.renter.first_name} {self.renter.last_name} - Date: {self.date} - Price: {self.price}"
+    
     # Method for calculating price.
     def calc_price(self) -> float:
         curr_price = BASE_PRICE
