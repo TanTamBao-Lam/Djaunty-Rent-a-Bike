@@ -31,4 +31,16 @@ class Bike(models.Model):
     def __str__(self) -> str:
         return f"{self.bike_type} - {self.color}"
     
+# Renter model
+class Renter(models.Model):
+    # Renter fields
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    phone = models.CharField(max_length=15)
+    vip_num = models.IntegerField(default=0)
+    
+    # Renter string rep.
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name} - #{self.phone}"
+
 # endregion
